@@ -7,10 +7,10 @@
   <meta name="description" content="Complexa: extensión para facilitar la lectura y aprendizaje del japonés en páginas web." />
   <style>
     :root{
-      --bg1:#03061a; /* muy oscuro */
-      --bg2:#07102a; /* degradado */
-      --accent-a:#7b3cff; /* violeta */
-      --accent-b:#2d8cff; /* azul */
+      --bg1:#03061a;
+      --bg2:#07102a;
+      --accent-a:#7b3cff;
+      --accent-b:#2d8cff;
       --glass: rgba(255,255,255,0.06);
       --card: rgba(255,255,255,0.03);
       --text:#e9eef8;
@@ -18,19 +18,39 @@
       --button-shadow: 0 8px 24px rgba(16,24,56,0.6);
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(160deg,var(--bg1), var(--bg2) 60%); color:var(--text);}
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(160deg,var(--bg1), var(--bg2) 60%);
+      color:var(--text);
+    }
     .wrap{max-width:1100px;margin:40px auto;padding:28px}
 
     header{display:flex;align-items:center;gap:20px}
     .logo{display:flex;align-items:center;gap:14px}
-    .logo img{width:76px;height:76px;object-fit:contain;border-radius:12px;box-shadow: 0 6px 20px rgba(16,24,56,0.6);background:linear-gradient(90deg,var(--accent-a),var(--accent-b));padding:10px}
+    .logo img{
+      width:76px;height:76px;object-fit:contain;border-radius:12px;
+      box-shadow:0 6px 20px rgba(16,24,56,0.6);
+      background:linear-gradient(90deg,var(--accent-a),var(--accent-b));
+      padding:10px;
+    }
     h1{font-size:44px;margin:0;font-weight:700;letter-spacing:-0.02em}
     .tag{color:var(--muted);margin-top:6px;font-size:15px}
 
     .hero{display:grid;grid-template-columns:1fr 380px;gap:32px;margin-top:26px;align-items:center}
-    .hero .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:28px;box-shadow:var(--button-shadow);}
+    .hero .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;padding:28px;box-shadow:var(--button-shadow);
+    }
 
-    .install-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:white;text-decoration:none;font-weight:600;box-shadow:0 8px 30px rgba(55,65,120,0.45)}
+    .install-btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:14px 18px;border-radius:12px;
+      background:linear-gradient(90deg,var(--accent-a),var(--accent-b));
+      color:white;text-decoration:none;font-weight:600;
+      box-shadow:0 8px 30px rgba(55,65,120,0.45);
+    }
     .install-hint{font-size:13px;color:var(--muted);margin-top:10px}
 
     .features{display:flex;flex-direction:column;gap:12px}
@@ -39,16 +59,17 @@
     .feature p{margin:0;font-size:15px;color:var(--text)}
     .muted{color:var(--muted);font-size:14px}
 
-    footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    footer{
+      margin-top:20px;color:var(--muted);
+      font-size:11px;text-align:center;opacity:0.8;
+    }
 
-    /* responsive */
     @media (max-width:880px){
       .hero{grid-template-columns:1fr;}
       .logo img{width:64px;height:64px}
       h1{font-size:36px}
     }
 
-    /* subtle animation */
     .logo img{transform:translateY(6px);animation:float 4s ease-in-out infinite}
     @keyframes float{0%{transform:translateY(6px)}50%{transform:translateY(-3px)}100%{transform:translateY(6px)}}
   </style>
@@ -69,57 +90,73 @@
       <div>
         <div class="card">
           <h2 style="margin-top:0">Convierte cualquier página en material de estudio</h2>
-          <p class="muted">Complexa extrae y analiza texto japonés en la página, muestra lecturas (furigana/romaji), coloriza por categorías gramaticales y provee tooltips con definiciones. Ideal para estudiantes y autodidactas.</p>
+          <p class="muted">
+            Complexa extrae y analiza texto japonés en la página, muestra lecturas (furigana/romaji),
+            coloriza por categorías gramaticales y provee tooltips con definiciones.
+            Ideal para estudiantes y autodidactas.
+          </p>
 
           <div style="margin-top:18px" class="features">
             <div class="feature"><div class="dot"></div><p><strong>Lecturas personalizables</strong> — hiragana, katakana o romaji.</p></div>
             <div class="feature"><div class="dot"></div><p><strong>Análisis NLP</strong> — tokenización, POS y dependencias (backend Ginza / spaCy).</p></div>
             <div class="feature"><div class="dot"></div><p><strong>Tooltips & definiciones</strong> — integración con Jisho.org y panel de vocabulario.</p></div>
           </div>
-
         </div>
 
         <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
           <a class="install-btn" href="#INSTALL_LINK#" id="installBtn">Instalar extensión</a>
           <div class="install-hint">(Deja este enlace vacío: reemplázalo por tu enlace al publicar)</div>
         </div>
-
       </div>
 
       <div>
         <div class="card" style="text-align:center">
           <h3 style="margin:0 0 12px 0">Demo rápida</h3>
-          <p class="muted" style="margin:0 0 18px 0">Abre una página con texto en japonés y activa Complexa para ver las anotaciones en vivo.</p>
-          <div style="height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:10px;padding:20px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));">
-      
-          <h3 style="margin-top:10px">Páginas para probar Complexa:</h3>
-          <ul style="font-size:15px;line-height:1.6;text-align:left;display:inline-block;margin-top:12px">
-            <li>
-              <a href="https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A5%E3%83%94%E3%82%BF%E3%83%BC%E6%96%87%E5%AD%97" target="_blank" style="color:var(--accent-b)">📖 Artículo japonés sobre escritura japonesa (Wikipedia)</a>
-            </li>
-            <li>
-              <a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E8%AA%9E" target="_blank" style="color:var(--accent-b)">🈶 Página original japonesa sobre el idioma japonés</a>
-            </li>
-            <li>
-              <a href="https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%AF%E3%82%B5%E3%83%BB%E3%83%9C%E3%83%AC%E3%82%B9%E3%83%AF%E3%83%B4%E3%83%B4%E3%83%8A_%28%E3%82%B9%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%87%E3%83%B3%E7%8E%8B%E5%A6%83%29" target="_blank" style="color:var(--accent-b)">👑 Biografía japonesa: リクサ・ボレスワヴヴナ (Princesa de Suecia)</a>
-            </li>
-          </ul>
-      
-      
-          <p style="margin-top:14px" class="muted">Ajustes: tema oscuro, filtros POS y sincronización con chrome.storage.sync</p>
+          <p class="muted" style="margin:0 0 18px 0">
+            Abre una página con texto en japonés y activa Complexa para ver las anotaciones en vivo.
+          </p>
+
+          <div style="
+            height:auto;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            border-radius:10px;
+            padding:24px;
+            background:rgba(255,255,255,0.02);
+            box-shadow:inset 0 0 0 1px rgba(255,255,255,0.02);
+          ">
+            <h3 style="margin-top:10px">Páginas para probar Complexa:</h3>
+            <ul style="font-size:15px;line-height:1.6;text-align:left;display:inline-block;margin-top:12px">
+              <li>
+                <a href="https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A5%E3%83%94%E3%82%BF%E3%83%BC%E6%96%87%E5%AD%97"
+                   target="_blank" style="color:var(--accent-b)">📖 Artículo japonés sobre escritura japonesa (Wikipedia)</a>
+              </li>
+              <li>
+                <a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E8%AA%9E"
+                   target="_blank" style="color:var(--accent-b)">🈶 Página original japonesa sobre el idioma japonés</a>
+              </li>
+              <li>
+                <a href="https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%AF%E3%82%B5%E3%83%BB%E3%83%9C%E3%83%AC%E3%82%B9%E3%83%AF%E3%83%B4%E3%83%B4%E3%83%8A_%28%E3%82%B9%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%87%E3%83%B3%E7%8E%8B%E5%A6%83%29"
+                   target="_blank" style="color:var(--accent-b)">👑 Biografía japonesa: リクサ・ボレスワヴヴナ (Princesa de Suecia)</a>
+              </li>
+            </ul>
+
+            <p style="margin-top:14px" class="muted">
+              Ajustes: tema oscuro, filtros POS y sincronización con chrome.storage.sync
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <footer>
       <div>© Complexa — CUCEI, UDG</div>
-   
     </footer>
   </div>
 
   <script>
-    // script leve: sustituye el enlace placeholder con un enlace real si lo deseas
     document.getElementById('installBtn').addEventListener('click', function(e){
       if(this.href.includes('#INSTALL_LINK#')){
         e.preventDefault();
